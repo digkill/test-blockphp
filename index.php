@@ -23,14 +23,11 @@
  */
 
 include('Blocker.php');
-include('FileText.php');
-include('FileManager.php');
 
-$fileManager = new FileManager();
+$blocker = new Blocker('ImportNews');    // Блокератор на импорт новостей
 
-$blocker = new Blocker('ImportNews', $fileManager);    // Блокератор на импорт новостей
 if ($blocker->open()) {    // Пытаюсь получить блокировку
-    echo 'Import news Doing';    // Если блокировка получена, делаем то что нам требуется
+    echo 'Import news 1';    // Если блокировка получена, делаем то что нам требуется
     $blocker->close();    // Освобождаем блокировку
 } else {
     echo 'Do nothing';
